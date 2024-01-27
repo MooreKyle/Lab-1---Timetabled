@@ -8,20 +8,20 @@ const Calendar = () => {
   // Example event data organized by day and time
   const eventSchedule = {
     "Sunday": {
-      "9 AM": { event: "Brunch at The Garden Room", color: "orange" },
-      "1 PM": { event: "Visit Trinity College Library", color: "blue" },
+      "9 AM": { event: "Brunch at The Garden Room", color: "orange", location: "The Garden Room, Dublin" },
+      "1 PM": { event: "Visit Trinity College Library", color: "blue", location: "Trinity College" },
     },
     "Monday": {
-      "10 AM": { event: "Tour of Dublin Castle", color: "grey" },
-      "2 PM": { event: "Coffee at Bewley's Grafton Street", color: "maroon" },
+      "10 AM": { event: "Tour of Dublin Castle", color: "grey", location: "Dublin Castle" },
+      "2 PM": { event: "Coffee at Bewley's Grafton Street", color: "maroon", location: "Bewley's Cafe" },
     },
     "Tuesday": {
-      "11 AM": { event: "Walk in St Stephen's Green", color: "green" },
-      "3 PM": { event: "Shopping at Grafton Street", color: "purple" },
+      "11 AM": { event: "Walk in St Stephen's Green", color: "green", location: "St Stephen's Green" },
+      "3 PM": { event: "Shopping at Grafton Street", color: "purple", location: "Grafton Street" },
     },
     "Wednesday": {
-      "8 AM": { event: "Fancy Dinner at Chapter One", color: "darkgreen" },
-      "5 PM": { event: "Sunset at Howth Head", color: "lightblue" },
+      "8 AM": { event: "Fancy Dinner at Chapter One", color: "darkgreen", location: "Chapter One Restaurant" },
+      "5 PM": { event: "Sunset at Howth Head", color: "lightblue", location: "Howth Head" },
     },
     // Continue to add events for Thursday, Friday, and Saturday
   };
@@ -30,7 +30,7 @@ const Calendar = () => {
   const renderEvent = (day, time) => {
     const event = eventSchedule[day]?.[time];
     if (event) {
-      return <Event event={event.event} color={event.color} />;
+      return <Event event={event.event} color={event.color} location={event.location} />;
     }
     return <td></td>; // Return empty cell if there's no event
   };
