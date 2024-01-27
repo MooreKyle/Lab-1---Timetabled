@@ -24,7 +24,8 @@ const Calendar = () => {
           {times.map((time, index) => (
             <tr key={time}>
               <td className="time">{time}</td>
-              {index === 0 ? <Event event="Test Event" /> : <td></td>} {/* Only the first row has an event */}
+              {/* Conditionally render the Event component with props */}
+              {index === 0 ? <Event event="Fancy Dinner 🎩" color="green" /> : <td></td>}
               <td></td> {/* Monday */}
               <td></td> {/* Tuesday */}
               <td></td> {/* Wednesday */}
