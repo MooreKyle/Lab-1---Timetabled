@@ -1,4 +1,5 @@
 import React from "react";
+import Event from './Event'; // Import the Event component
 
 const Calendar = () => {
   // Array of times for the hour blocks
@@ -20,10 +21,10 @@ const Calendar = () => {
           </tr>
         </thead>
         <tbody>
-          {times.map(time => (
+          {times.map((time, index) => (
             <tr key={time}>
               <td className="time">{time}</td>
-              <td></td> {/* Sunday */}
+              {index === 0 ? <Event event="Test Event" /> : <td></td>} {/* Only the first row has an event */}
               <td></td> {/* Monday */}
               <td></td> {/* Tuesday */}
               <td></td> {/* Wednesday */}
